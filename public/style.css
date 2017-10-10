@@ -1,0 +1,61 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header,
+.content,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+.footer {
+    color: #777;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+.content {
+    margin-top: 40px 0;
+}
+
+.content p + h4 {
+    margin-top: 28px;
+}
+
+#map {
+    height: 645px;
+    width: 645px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 1120px;
+    }
+
+    .header,
+    .content,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+}
