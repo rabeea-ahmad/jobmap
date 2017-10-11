@@ -104,6 +104,7 @@ angular.module('mapService', [])
         var _initialize = function(latitude, longitude) {
             var myLatLng = {lat: selectedLat, lng: selectedLong};
 
+            // Create map, if it doesn't already exist
             if (!map){
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 5,
@@ -111,6 +112,7 @@ angular.module('mapService', [])
                 });
             }
 
+            // Add markers to graph
             locations.forEach(function(l, i) {
                var marker = new google.maps.Marker({
                    position: {'lat': l.lat, 'lng': l.lng},
@@ -119,13 +121,16 @@ angular.module('mapService', [])
                    icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
                });
 
-                google.maps.event.addListener(marker, 'click', function(e){
-                    currentSelectedMarker = l;
-                    l.message.open(map, marker);
-                });
+               // Add listener to each marker to open info if clicked
+               google.maps.event.addListener(marker, 'click', function(e){
+                 currentSelectedMarker = l;
+                 l.message.open(map, marker);
+               });
             });
 
             // Set initial location as a bouncing red marker
+            // TODO: change this to set initial location to be the current location
+            //      - use google geolocation functionality to get current location
             var initialLocation = new google.maps.LatLng(latitude, longitude);
             var marker = new google.maps.Marker({
                 position: initialLocation,
