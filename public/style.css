@@ -1,40 +1,41 @@
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 30px;
+    font-family: Roboto;
 }
 
-.header,
-.content,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+.section {
+  margin: 40px;
 }
 
-.header {
-    border-bottom: 1px solid #e5e5e5;
+.form {
+  width: 500px;
 }
 
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.form__title {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
 }
 
-.footer {
-    color: #777;
+.form-group {
+  padding-left: 10%;
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
+.form__submit {
+  width: 30%;
+  margin: 0 auto;
 }
 
-.content {
-    margin-top: 40px 0;
+input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 35px;
+  width: 30%;
+  padding-left: 10px;
 }
 
-.content p + h4 {
-    margin-top: 28px;
+input:focus {
+  outline: none;
 }
 
 #map {
@@ -42,7 +43,7 @@ body {
     width: 645px;
 }
 
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
     .container {
         max-width: 1120px;
     }
@@ -58,4 +59,4 @@ body {
         margin-bottom: 30px;
     }
 
-}
+}*/

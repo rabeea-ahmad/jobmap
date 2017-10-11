@@ -1,39 +1,39 @@
 <div class="col-md-5">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title text-center">Add your location <span class="glyphicon glyphicon-map-marker"></span></h2>
+            <p class="form__title">ADD YOUR LOCATION</p>
         </div>
         <div class="panel-body">
             <form name ="addForm" novalidate>
-                <div class="form-group">
-                    <label for="username">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Post Malone" ng-model="formData.name" required>
+                <div class="form-group container">
+                    <p class="row">Name</p>
+                    <input type="text" class="field__input row" id="name" placeholder="Post Malone" ng-model="formData.name" required>
                 </div>
-                <div class="form-group">
-                    <label for="age">Program</label>
-                    <input type="text" class="form-control" id="program" placeholder="Computer Engineering" ng-model="formData.program">
+                <div class="form-group container">
+                    <p class="row">Program</p>
+                    <input type="text" class="field__input row" id="program" placeholder="Computer Engineering" ng-model="formData.program">
                 </div>
-                <div class="form-group">
-                    <label for="language">Favorite Language</label>
-                    <input type="text" class="form-control" id="language" placeholder="Python" ng-model="formData.favlang">
+                <div class="form-group container">
+                    <p class="row">Favorite Language</p>
+                    <input type="text" class="field__input row" id="language" placeholder="Python" ng-model="formData.favlang">
                 </div>
-                <div class="form-group">
-                    <label for="position">Job Position</label>
-                    <input type="text" class="form-control" id="position" placeholder="CEO" ng-model="formData.position">
+                <div class="form-group container">
+                    <p class="row">Job Position</p>
+                    <input type="text" class="field__input row" id="position" placeholder="CEO" ng-model="formData.position">
                 </div>
-                <div class="form-group">
-                    <label for="language">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="123 Street St" ng-model="formData.address" required>
+                <div class="form-group container">
+                    <p class="row">Address</p>
+                    <input type="text" class="field__input row" id="address" placeholder="123 Street St" ng-model="formData.address" required>
                 </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" class="form-control" id="company" placeholder="Shopify" ng-model="formData.company" required>
+                <div class="form-group container">
+                    <p class="row">Company</p>
+                    <input type="text" class="field__input row" id="company" placeholder="Shopify" ng-model="formData.company" required>
                 </div>
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="Ottawa" ng-model="formData.city" required>
+                <div class="form-group container">
+                    <p class="row">City</p>
+                    <input type="text" class="field__input row" id="city" placeholder="Ottawa" ng-model="formData.city" required>
                 </div>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+                <button type="submit" class="btn btn-danger btn-block form__submit" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
             </form>
         </div>
     </div>

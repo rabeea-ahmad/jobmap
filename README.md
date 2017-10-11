@@ -2,7 +2,7 @@
 
 A webapp for friends + classmates to add where they are working for coop
 
-## Getting Started
+## getting started
 
 ```git clone git@github.com:rabeea-ahmad/jobmap.git```
 
@@ -18,10 +18,10 @@ A webapp for friends + classmates to add where they are working for coop
 
 ```Profit```
 
-## Next Steps
-
-Fix UI (get rid of bootstrap)
-
 ## install
 
 Make sure you have MongoDB installed on your computer and create a ```jobmap``` db with a ```users``` collection
+
+## next steps
+
+Fix UI (get rid of bootstrap)
