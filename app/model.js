@@ -7,7 +7,8 @@ var UserSchema = new Schema({
     position: {type: String, required: true},
     company: {type: String, required: true},
     city: {type: String, required: true},
-    //location: {type: [Number], required: true}, // [Long, Lat]
+    address: {type: String, requires: true},
+    location: {type: [Number], required: true}, // [Long, Lat]
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
 });

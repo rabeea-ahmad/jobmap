@@ -8,8 +8,8 @@ angular.module('mapService', [])
         var currentSelectedMarker;
 
         // Cali babyyy
+        var selectedLong = -75.692782;
         var selectedLat = 45.420469;
-        var selectedLong = 75.692782;
 
         // Constructor for generic location
         var Location = function(lat, lng, message, name, program, position, favlang){
@@ -22,7 +22,12 @@ angular.module('mapService', [])
             this.favlang = favlang
         };
 
-
+        /*
+        * @name: refresh
+        * @description: updates map to display new locations
+        * @param: {number} latitude
+        * @param: {number} longitude
+        */
         googleMapService.refresh = function(latitude, longitude){
             locations = [];
 
@@ -31,12 +36,20 @@ angular.module('mapService', [])
 
             $http.get('/users').success(function(response){
                 locations = _convertToMapPoints(response);
-                initialize(selectedLat, selectedLong, false);
+                _initialize(selectedLat, selectedLong);
             }).error(function(err){
               console.log("oh no there is a refresh error: ", err);
             });
         };
 
+        /*
+        * @name: getCoordinates
+        * @description: finds coordinates for a specific address, city
+        * @param: {String} address
+        * @param: {String} city
+        * @returns: {Object} lat and lng
+        * TODO: refactor this to use google maps api and not hit straight url!!
+        */
         googleMapService.getCoordinates = function(address, city) {
           var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + ', ' + city + '&key=AIzaSyBVycosjnbw1UHOImeEkTGK008cgWW_KVE';
           return $http({
@@ -49,6 +62,12 @@ angular.module('mapService', [])
           });
         }
 
+        /*
+        * @name: _convertToMapPoints
+        * @description: creates map points
+        * @param: {Array} response
+        * @returns: {Array} locations
+        */
         var _convertToMapPoints = function(response){
             var locations = [];
 
@@ -75,7 +94,14 @@ angular.module('mapService', [])
             return locations;
         };
 
-        var initialize = function(latitude, longitude, filter) {
+        /*
+        * @name: _intialize
+        * @description: setup map + add markers
+        * @param: {number} latitude
+        * @param: {number} longitude
+        * TODO: refactor the initial map generation (move somewhere else?)
+        */
+        var _initialize = function(latitude, longitude) {
             var myLatLng = {lat: selectedLat, lng: selectedLong};
 
             if (!map){

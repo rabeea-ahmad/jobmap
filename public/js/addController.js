@@ -15,18 +15,20 @@ angular
     // Creates a new user
     $scope.createUser = function() {
       var location;
+
+      // Get the latitude and longitude of the company by address, city
       mapService.getCoordinates($scope.formData.address, $scope.formData.city)
       .then(function(response) {
         location = response;
-        console.log("here is the location: ", location);
+
           var userData = {
               name: $scope.formData.name,
               program: $scope.formData.program,
-              age: 19,
               position: $scope.formData.position,
               favlang: $scope.formData.favlang,
               company: $scope.formData.company,
               city: $scope.formData.city,
+              address: $scope.formData.address,
               location: [location.lat, location.lng]
           };
           return $http.post('/users', userData)
@@ -39,6 +41,7 @@ angular
                   $scope.formData.company = "";
                   $scope.formData.city = "";
 
+                  // Update the map to add the new location
                   mapService.refresh(location.lat, location.lng);
               })
               .error(function (data) {
